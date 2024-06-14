@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Nunito';
+  src: local('Nunito'), url('/fonts/nunito/Nunito-Black.ttf') format('truetype');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: local('Mulish'), url('/fonts/mulish/Mulish-Regular.ttf') format('truetype');
+  font-weight: 400;
+}

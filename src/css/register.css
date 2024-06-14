@@ -1,0 +1,284 @@
+.register-section {
+  display: flex;
+  min-height: 100vh;
+  background-color: #592f9e;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.register-section-container {
+  position: relative;
+  height: 100%;
+  border-radius: 30px;
+  background-color: #9689e8;
+  padding: 130px 20px 24px;
+  overflow: hidden;
+}
+
+.register-section-content-wrap {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  min-height: 100%;
+  transition: opacity var(--transition-duration-and-func);
+}
+
+.register-section-container-header {
+  position: absolute;
+  z-index: 100;
+  top: 12px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 12px - 12px);
+  transform: translateX(-50%);
+}
+
+.register-section-container-header-dream-house-logo-img {
+  width: 99px;
+  height: 70px;
+}
+
+.register-section-container-header-atb-icon {
+  width: 86px;
+  height: 52px;
+}
+
+.register-section-container-form-wrap {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.register-section-container-form-title {
+  color: var(--white-color);
+  font-family: Nunito;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.register-section-container-form {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 155px;
+}
+
+.register-section-container-form-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.register-section-container-form-input-wrap {
+  position: relative;
+}
+
+.register-section-container-form-input-title-wrap {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  display: block;
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: #9689e8;
+  transform: translateY(-50%);
+  transition: top var(--transition-duration-and-func);
+}
+
+.register-section-container-form-input-title {
+  display: block;
+  color: var(--white-color);
+  font-family: Mulish;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  transition: font-size var(--transition-duration-and-func);
+}
+
+.register-section-container-form-input {
+  width: 100%;
+  height: 56px;
+  border: 1px solid;
+  border-color: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: transparent;
+  outline: none;
+  color: var(--white-color);
+  font-family: Mulish;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.register-section-container-form-input:is(:focus, :not(:placeholder-shown)) ~ .register-section-container-form-input-title-wrap {
+  top: 0%;
+}
+
+.register-section-container-form-input:is(:focus, :not(:placeholder-shown)) ~ .register-section-container-form-input-title-wrap > .register-section-container-form-input-title {
+  font-size: 12px;
+}
+
+.register-section-container-form-input-success-icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: var(--white-color);
+  transform: translateY(-50%);
+}
+
+.register-section-container-form-input-error {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  color: #c12f1c;
+  font-family: Mulish;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0%;
+  text-align: left;
+  transform: translateY(100%);
+}
+
+.register-section-container-form-input-wrap.invalid .register-section-container-form-input {
+  border-color: rgba(193, 47, 28, 0.6);
+}
+
+.register-section-container-form-input-wrap:not(.invalid) .register-section-container-form-input-error {
+  opacity: 0;
+}
+
+.register-section-container-form-input-wrap:not(.success) .register-section-container-form-input-success-icon {
+  opacity: 0;
+}
+
+.register-section-container-form-input-wrap.success .register-section-container-form-input {
+  padding-right: 36px;
+}
+
+.register-section-container-form-submit-btn-wrap {
+  position: relative;
+}
+
+.register-section-container-form-submit-btn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 28px;
+  padding: 0;
+  background-color: #f9b345;
+}
+
+.register-section-container-form-submit-btn:disabled {
+  background-color: #776bc5;
+}
+
+.register-section-container-form-submit-btn-title {
+  color: var(--white-color);
+  font-family: Nunito;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.register-section-container-form-submit-btn:disabled .register-section-container-form-submit-btn-title {
+  color: #9689e8;
+}
+
+.register-section-container-form-submit-btn-bg-img {
+  position: absolute;
+  top: -175px;
+  left: -73px;
+  display: block;
+  width: 468px;
+  max-width: 468px;
+  height: 370px;
+  pointer-events: none;
+}
+
+.register-section-container-form-submit-btn-icon {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  pointer-events: none;
+}
+
+.register-section-container-form-submit-btn-top-star-icon {
+  top: -121px;
+  left: 159px;
+  width: 19px;
+  height: 19px;
+}
+
+.register-section-container-form-submit-btn-left-icon {
+  top: -78px;
+  left: 24px;
+  width: 31px;
+  height: 31px;
+}
+
+.register-section-container-form-submit-btn-right-star-icon {
+  top: -71px;
+  right: 0;
+  width: 54px;
+  height: 54px;
+}
+
+.register-section-container.success-submit .register-section-content-wrap {
+  opacity: 0;
+}
+
+.register-section-success-submit-msg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: palevioletred;
+}
+
+.register-section-success-submit-msg-text-wrap {
+}
+
+.register-section-success-submit-msg-title {
+}
+
+.register-section-success-submit-msg-text {
+}
+
+.register-section-success-submit-msg-bg-img {
+  position: absolute;
+}
+
+.register-section-success-submit-msg-icon {
+  position: absolute;
+}
+
+.register-section-success-submit-msg-left-star-icon {
+}
+
+.register-section-success-submit-msg-right-star-icon {
+}
+
+.register-section-success-submit-msg-top-star-icon {
+}
