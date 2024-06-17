@@ -184,6 +184,7 @@
   border-radius: 28px;
   padding: 0;
   background-color: #f9b345;
+  transition: background-color var(--transition-duration-and-func), color var(--transition-duration-and-func);
 }
 
 .register-section-container-form-submit-btn:disabled {
@@ -243,6 +244,7 @@
 
 .register-section-container.success-submit .register-section-content-wrap {
   opacity: 0;
+  pointer-events: none;
 }
 
 .register-section-success-submit-msg {
@@ -254,31 +256,75 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: palevioletred;
+  opacity: 1;
+  transition: opacity var(--transition-duration-and-func);
+}
+
+.register-section-container:not(.success-submit) .register-section-success-submit-msg {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .register-section-success-submit-msg-text-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .register-section-success-submit-msg-title {
+  color: var(--white-color);
+  font-family: Nunito;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.1;
 }
 
 .register-section-success-submit-msg-text {
+  color: var(--white-color);
+  font-family: Mulish;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
 }
 
 .register-section-success-submit-msg-bg-img {
   position: absolute;
+  top: 0;
+  left: 0;
+  top: calc(50% - 55px);
+  left: calc(50% + 19px);
+  width: 863px;
+  max-width: 863px;
+  height: 684px;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .register-section-success-submit-msg-icon {
   position: absolute;
+  display: block;
 }
 
 .register-section-success-submit-msg-left-star-icon {
+  top: -29px;
+  left: 2px;
+  width: 31px;
+  height: 31px;
 }
 
 .register-section-success-submit-msg-right-star-icon {
+  top: -22px;
+  left: 228px;
+  width: 54px;
+  height: 54px;
 }
 
 .register-section-success-submit-msg-top-star-icon {
+  top: -72px;
+  left: 137px;
+  width: 19px;
+  height: 19px;
 }
