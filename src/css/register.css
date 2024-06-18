@@ -65,6 +65,11 @@
 .register-section-container-form {
   flex-grow: 1;
   display: flex;
+}
+
+.register-section-container-form-content {
+  flex-grow: 1;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 155px;
@@ -80,7 +85,7 @@
   position: relative;
 }
 
-.register-section-container-form-input-title-wrap {
+.register-section-container-form-input-title {
   position: absolute;
   top: 50%;
   left: 12px;
@@ -88,18 +93,14 @@
   padding-left: 4px;
   padding-right: 4px;
   background-color: #9689e8;
-  transform: translateY(-50%);
-  transition: top var(--transition-duration-and-func);
-}
-
-.register-section-container-form-input-title {
-  display: block;
   color: var(--white-color);
   font-family: Mulish;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
-  transition: font-size var(--transition-duration-and-func);
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: font-size var(--transition-duration-and-func), top var(--transition-duration-and-func);
 }
 
 .register-section-container-form-input {
@@ -119,26 +120,15 @@
   line-height: 1.5;
 }
 
-.register-section-container-form-input:is(:focus, :not(:placeholder-shown)) ~ .register-section-container-form-input-title-wrap {
+.register-section-container-form-input-wrap:has(.register-section-container-form-input:is(:focus, :not(:placeholder-shown))) > .register-section-container-form-input-title {
   top: 0%;
 }
 
-.register-section-container-form-input:is(:focus, :not(:placeholder-shown)) ~ .register-section-container-form-input-title-wrap > .register-section-container-form-input-title {
+.register-section-container-form-input-wrap:has(.register-section-container-form-input:is(:focus, :not(:placeholder-shown))) > .register-section-container-form-input-title {
   font-size: 12px;
 }
 
-.register-section-container-form-input-success-icon {
-  position: absolute;
-  top: 50%;
-  right: 12px;
-  display: block;
-  width: 20px;
-  height: 20px;
-  fill: var(--white-color);
-  transform: translateY(-50%);
-}
-
-.register-section-container-form-input-error {
+.help-block {
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -149,19 +139,16 @@
   line-height: 16px;
   letter-spacing: 0%;
   text-align: left;
+  opacity: 0;
   transform: translateY(100%);
 }
 
-.register-section-container-form-input-wrap.invalid .register-section-container-form-input {
+.register-section-container-form-input-wrap.has-error .help-block {
+  opacity: 1;
+}
+
+.register-section-container-form-input-wrap.has-error .register-section-container-form-input {
   border-color: rgba(193, 47, 28, 0.6);
-}
-
-.register-section-container-form-input-wrap:not(.invalid) .register-section-container-form-input-error {
-  opacity: 0;
-}
-
-.register-section-container-form-input-wrap:not(.success) .register-section-container-form-input-success-icon {
-  opacity: 0;
 }
 
 .register-section-container-form-input-wrap.success .register-section-container-form-input {
@@ -240,91 +227,4 @@
   right: 0;
   width: 54px;
   height: 54px;
-}
-
-.register-section-container.success-submit .register-section-content-wrap {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.register-section-success-submit-msg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
-  transition: opacity var(--transition-duration-and-func);
-}
-
-.register-section-container:not(.success-submit) .register-section-success-submit-msg {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.register-section-success-submit-msg-text-wrap {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.register-section-success-submit-msg-title {
-  color: var(--white-color);
-  font-family: Nunito;
-  font-size: 20px;
-  font-weight: 900;
-  line-height: 1.1;
-}
-
-.register-section-success-submit-msg-text {
-  color: var(--white-color);
-  font-family: Mulish;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-  text-align: left;
-}
-
-.register-section-success-submit-msg-bg-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  top: calc(50% - 55px);
-  left: calc(50% + 19px);
-  width: 863px;
-  max-width: 863px;
-  height: 684px;
-  pointer-events: none;
-  transform: translateX(-50%) translateY(-50%);
-}
-
-.register-section-success-submit-msg-icon {
-  position: absolute;
-  display: block;
-}
-
-.register-section-success-submit-msg-left-star-icon {
-  top: -29px;
-  left: 2px;
-  width: 31px;
-  height: 31px;
-}
-
-.register-section-success-submit-msg-right-star-icon {
-  top: -22px;
-  left: 228px;
-  width: 54px;
-  height: 54px;
-}
-
-.register-section-success-submit-msg-top-star-icon {
-  top: -72px;
-  left: 137px;
-  width: 19px;
-  height: 19px;
 }
