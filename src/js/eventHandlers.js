@@ -1,12 +1,18 @@
 import refs from './refs';
 
 refs.registerForm.addEventListener('input', onFormInput);
+refs.registerForm.addEventListener('submit', onFormSummit);
 refs.phoneInput.addEventListener('input', onPhoneInputChange);
 
-const phoneInputPrefix = '+380 ';
+function onFormSummit(e) {
+  e.preventDefault();
 
-if (!refs.phoneInput.value) {
-  refs.phoneInput.value = phoneInputPrefix;
+  const formData = new FormData(e.currentTarget);
+
+  formData.forEach((value, key) => {
+    console.log(value);
+    console.log(key);
+  });
 }
 
 function onFormInput(e) {

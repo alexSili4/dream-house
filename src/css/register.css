@@ -81,11 +81,11 @@
   gap: 24px;
 }
 
-.register-section-container-form-input-wrap {
+.form-group {
   position: relative;
 }
 
-.register-section-container-form-input-title {
+.control-label {
   position: absolute;
   top: 50%;
   left: 12px;
@@ -120,11 +120,11 @@
   line-height: 1.5;
 }
 
-.register-section-container-form-input-wrap:has(.register-section-container-form-input:is(:focus, :not(:placeholder-shown))) > .register-section-container-form-input-title {
+.form-group:has(.register-section-container-form-input:is(:focus, :not(:placeholder-shown))) > .control-label {
   top: 0%;
 }
 
-.register-section-container-form-input-wrap:has(.register-section-container-form-input:is(:focus, :not(:placeholder-shown))) > .register-section-container-form-input-title {
+.form-group:has(.register-section-container-form-input:is(:focus, :not(:placeholder-shown))) > .control-label {
   font-size: 12px;
 }
 
@@ -143,15 +143,15 @@
   transform: translateY(100%);
 }
 
-.register-section-container-form-input-wrap.has-error .help-block {
+.form-group.has-error .help-block {
   opacity: 1;
 }
 
-.register-section-container-form-input-wrap.has-error .register-section-container-form-input {
+.form-group.has-error .register-section-container-form-input {
   border-color: rgba(193, 47, 28, 0.6);
 }
 
-.register-section-container-form-input-wrap.success .register-section-container-form-input {
+.form-group.success .register-section-container-form-input {
   padding-right: 36px;
 }
 

@@ -11,18 +11,21 @@
         <div class="register-section-container-form-wrap">
           <p class="register-section-container-form-title">Реєстрація коду</p>
           <form class="register-section-container-form js-register-section-container-form">
+            <input type="hidden" name="" />
             <div class="register-section-container-form-content">
               <div class="register-section-container-form-input-container">
-                <div class="register-section-container-form-input-wrap">
-                  <label class="register-section-container-form-input-title">Ім'я</label>
+                <div class="form-group field-codeform-name required">
+                  <label class="control-label">Ім'я</label>
                   <input type="text" class="register-section-container-form-input" placeholder=" " name="name" />
+                  <div class="help-block"></div>
                 </div>
-                <div class="register-section-container-form-input-wrap">
-                  <label class="register-section-container-form-input-title">Номер телефону</label>
+                <div class="form-group field-codeform-phone required">
+                  <label class="control-label">Номер телефону</label>
                   <input type="tel" class="register-section-container-form-input js-register-section-container-form-input" placeholder=" " name="phone" />
+                  <div class="help-block"></div>
                 </div>
-                <div class="register-section-container-form-input-wrap">
-                  <label class="register-section-container-form-input-title">Код</label>
+                <div class="form-group field-codeform-code required">
+                  <label class="control-label">Код</label>
                   <input type="text" class="register-section-container-form-input" placeholder=" " name="code" />
                   <div class="help-block">Помилка</div>
                 </div>
