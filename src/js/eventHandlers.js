@@ -2,7 +2,21 @@ import refs from './refs';
 
 refs.registerForm.addEventListener('input', onFormInput);
 refs.registerForm.addEventListener('submit', onFormSummit);
-refs.phoneInput.addEventListener('input', onPhoneInputChange);
+window.addEventListener('load', onFirstLoad);
+
+function onFirstLoad(e) {
+  const data = {};
+  const formData = new FormData(refs.registerForm);
+
+  formData.forEach((value, key) => {
+    data[key] = value;
+  });
+
+  const values = Object.values(data);
+  const isEmptyField = values.some((value) => !value);
+
+  refs.submitFormBtn.disabled = isEmptyField ? true : false;
+}
 
 function onFormSummit(e) {
   e.preventDefault();
@@ -27,5 +41,3 @@ function onFormInput(e) {
 
   refs.submitFormBtn.disabled = isEmptyField ? true : false;
 }
-
-function onPhoneInputChange(e) {}
