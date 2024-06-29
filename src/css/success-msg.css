@@ -56,21 +56,21 @@
 
 .register-section-success-submit-msg-left-star-icon {
   top: -29px;
-  left: 2px;
+  right: calc(50% + 97px);
   width: 31px;
   height: 31px;
 }
 
 .register-section-success-submit-msg-right-star-icon {
   top: -22px;
-  left: 228px;
+  left: calc(50% + 99px);
   width: 54px;
   height: 54px;
 }
 
 .register-section-success-submit-msg-top-star-icon {
   top: -72px;
-  left: 137px;
+  left: calc(50% + 8px);
   width: 19px;
   height: 19px;
 }
